@@ -17,8 +17,8 @@ export const routes: Routes = [
         path:'layout',
         component:LayoutComponent
     },
-    {
-        path:'sidebar',
-        component:SidebarComponent
-    }
+    // {
+    //     path:'sidebar',
+    //     component:SidebarComponent
+    // }
 ];
