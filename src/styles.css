@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+:root{
+    --claro:#f2f6d0;
+    --naranja:#d98324;
+    --naranjaClaro:#efdcab;
+}
+
+.bg-claro{
+    background: var(--claro);
+}
+.bg-naranja{
+    background: var(--naranja);
+}
+.bg-naranjaClaro{
+    background: var(--naranjaClaro);
+}
