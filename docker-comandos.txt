@@ -1,0 +1,156 @@
+# Sintaxis general de Docker:
+docker <comando> [opciones] [argumentos]
+
+# Comandos comunes de Docker:
+
+# 1. Verificar la versión de Docker
+docker --version
+
+# 2. Obtener información del sistema Docker
+docker info
+
+# 3. Listar contenedores en ejecución
+docker ps
+# Listar todos los contenedores, incluidos los detenidos
+docker ps -a
+
+# 4. Ejecutar un contenedor desde una imagen
+docker run [opciones] <imagen> [comando]
+# Ejemplo: Ejecutar un contenedor en segundo plano (detached mode)
+docker run -d --name mi_contenedor <imagen>
+# Ejecutar un contenedor en modo interactivo
+docker run -it <imagen> bash
+# Mapear puertos entre el host y el contenedor
+docker run -p 8080:80 <imagen>
+
+# 5. Detener un contenedor en ejecución
+docker stop <contenedor_id>
+
+# 6. Iniciar un contenedor detenido
+docker start <contenedor_id>
+
+# 7. Eliminar un contenedor
+docker rm <contenedor_id>
+# Eliminar un contenedor en ejecución (forzadamente)
+docker rm -f <contenedor_id>
+
+# 8. Listar imágenes locales
+docker images
+
+# 9. Eliminar una imagen
+docker rmi <imagen_id>
+
+# 10. Crear una imagen desde un Dockerfile
+docker build -t <nombre_imagen>:<etiqueta> <ruta_dockerfile>
+# Ejemplo: Construir una imagen
+docker build -t mi_imagen:v1 .
+
+# 11. Ver los logs de un contenedor
+docker logs <contenedor_id>
+
+# 12. Ejecutar un comando en un contenedor en ejecución
+docker exec -it <contenedor_id> <comando>
+# Ejemplo: Acceder a un contenedor en ejecución
+docker exec -it mi_contenedor bash
+
+# 13. Buscar imágenes en Docker Hub
+docker search <imagen>
+
+# 14. Descargar una imagen desde Docker Hub
+docker pull <imagen>
+
+# 15. Subir una imagen a Docker Hub
+docker push <nombre_imagen>
+
+# 16. Inspeccionar una imagen o contenedor
+docker inspect <imagen_o_contenedor>
+
+# 17. Listar redes Docker
+docker network ls
+# Crear una nueva red Docker
+docker network create <nombre_red>
+# Conectar un contenedor a una red
+docker network connect <nombre_red> <contenedor_id>
+# Desconectar un contenedor de una red
+docker network disconnect <nombre_red> <contenedor_id>
+
+# 18. Crear un volumen Docker
+docker volume create <nombre_volumen>
+# Listar volúmenes Docker
+docker volume ls
+# Eliminar un volumen Docker
+docker volume rm <nombre_volumen>
+
+# 19. Guardar una imagen en un archivo tar
+docker save -o <archivo_salida.tar> <imagen>
+
+# 20. Cargar una imagen desde un archivo tar
+docker load -i <archivo_entrada.tar>
+
+# Sintaxis para obtener las opciones y argumentos de un comando:
+docker <comando> --help
+# Ejemplo: Obtener las opciones y argumentos de "docker run"
+docker run --help
+# Ejemplo: Obtener las opciones y argumentos de "docker build"
+docker build --help
+# Ejemplo: Obtener las opciones y argumentos de "docker ps"
+docker ps --help
+
+# Ejemplo de la salida de "docker ps --help":
+# Usage:  docker ps [OPTIONS]
+# List containers
+# 
+# Options:
+#   -a, --all                  Show all containers (default shows just running)
+#   -f, --filter stringArray    Filter containers based on conditions provided
+#   -n, --last int              Show n last created containers (includes all states)
+#   -l, --latest                Show the latest created container (includes all states)
+#   -q, --quiet                 Only display container IDs
+#   --no-trunc                  Don't truncate output
+#   --size                      Show container sizes
+#   -s, --show-all              Show all containers, even if they are stopped
+#   --help                      Print usage
+
+# Opciones comunes de "docker ps":
+# -a, --all: Muestra todos los contenedores, no solo los que están en ejecución.
+# -f, --filter: Filtra los contenedores según ciertas condiciones.
+# -n, --last: Muestra los últimos n contenedores creados, incluyendo los detenidos.
+# -l, --latest: Muestra el último contenedor creado (incluye los detenidos).
+# -q, --quiet: Muestra solo los IDs de los contenedores.
+# --no-trunc: No trunca la salida.
+# --size: Muestra el tamaño de los contenedores.
+# -s, --show-all: Muestra todos los contenedores, incluso los detenidos.
+
+# Ejemplos prácticos con "docker ps":
+# 1. Mostrar todos los contenedores (en ejecución y detenidos)
+docker ps -a
+# 2. Mostrar solo los IDs de los contenedores
+docker ps -q
+# 3. Mostrar contenedores filtrados por nombre
+docker ps -f "name=mi_contenedor"
+# 4. Mostrar los últimos 5 contenedores creados
+docker ps -n 5
+
+# Opciones comunes de Docker:
+# -d: Ejecutar el contenedor en segundo plano (detached mode).
+# -i, --interactive: Mantener la entrada estándar abierta incluso si no está conectada a un terminal.
+# -t, --tty: Asignar un pseudo-terminal, útil para interactuar con el contenedor.
+# --name: Asignar un nombre al contenedor.
+# -p, --publish: Mapear puertos entre el contenedor y el host (host_port:container_port).
+# -v, --volume: Montar volúmenes entre el host y el contenedor.
+# --rm: Eliminar automáticamente el contenedor cuando termine su ejecución.
+# --env: Establecer variables de entorno en el contenedor.
+
+# Ejemplos prácticos:
+# 1. Ejecutar un contenedor con nombre y en segundo plano
+docker run -d --name mi_contenedor nginx
+# 2. Ejecutar un contenedor interactivo y acceder a la terminal
+docker run -it ubuntu bash
+# 3. Construir una imagen con un tag específico
+docker build -t mi_imagen:v1 .
+# 4. Eliminar un contenedor y sus volúmenes asociados
+docker rm -v mi_contenedor
+# 5. Listar contenedores y mostrar los detenidos
+docker ps -a
+# 6. Ver los logs de un contenedor específico
+docker logs mi_contenedor
