@@ -1,0 +1,7 @@
+.fondodiv {
+    background-image: url('img/fondo.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+  }
