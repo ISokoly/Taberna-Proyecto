@@ -3,5 +3,5 @@
   background-size: cover !important;
   background-position: center !important;
   background-attachment: fixed !important;
-  min-height: 100vh; /* Asegúrate de que el fondo cubra toda la pantalla */
+  min-height: 100vh;
 }
