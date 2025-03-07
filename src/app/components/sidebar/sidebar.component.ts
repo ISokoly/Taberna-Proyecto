@@ -20,6 +20,6 @@ export class SidebarComponent    {
     this.isSidebarOpen = false;
   };
  
-  array:any[]=[{label:"Productos", rutas:'productos'}, {label:"Categorias", rutas:'categorias'}, {label:"Marcas", rutas:'marcas'}, {label:"Ventas", rutas:'ventas'}, {label:"Reportes", rutas:'reportes'}]
-
+  //
+  array:any[]=[{label:"Productos", rutas:'productos'}, {label:"Categorias", rutas:'categorias'}, {label:"Marcas", rutas:'marcas'}/*, {label:"Ventas", rutas:'ventas'}, {label:"Reportes", rutas:'reportes'} */]
 }
