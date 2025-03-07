@@ -1,0 +1,7 @@
+.sidebar {
+    background-image: url('../../../../public/img/roble_claro.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+  }

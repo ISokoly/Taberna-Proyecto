@@ -1,4 +1,4 @@
-<div class="max-w-3xl mx-auto bg-[#2d1b0d] text-white p-6 rounded-lg shadow-lg">
+<div class="max-w-3xl mx-auto bg-[#4C2D16] text-white p-6 rounded-lg shadow-lg">
     <h2 class="text-2xl font-bold mb-4 border-b border-[#c49a6c] pb-2">Categorías</h2>
     
     <form (ngSubmit)="saveCategoria()" class="mb-6 flex flex-col space-y-4">
@@ -13,7 +13,7 @@
       
       <button 
         type="submit" 
-        class="w-full bg-[#c49a6c] text-[#2d1b0d] py-2 rounded font-semibold hover:bg-[#a3784d] transition"
+        class="w-full bg-[#c49a6c] text-[#2d1b0d] py-2 cursor-pointer rounded font-semibold hover:bg-[#a3784d] transition"
       >
         {{ selectedCategoria ? 'Actualizar' : 'Crear' }}
       </button>
@@ -23,7 +23,7 @@
         *ngIf="selectedCategoria"
         type="button" 
         (click)="cancelEditCategoria()" 
-        class="w-full bg-gray-500 text-white py-2 rounded font-semibold hover:bg-gray-600 transition"
+        class="w-full bg-gray-500 text-white py-2 cursor-pointer rounded font-semibold hover:bg-gray-600 transition"
       >
         Cancelar
       </button>
@@ -35,13 +35,13 @@
         <div class="space-x-2">
           <button 
             (click)="editCategoria(categoria)" 
-            class="px-3 py-1 bg-[#c49a6c] text-[#2d1b0d] rounded hover:bg-[#a3784d] transition"
+            class="px-3 py-1 bg-[#c49a6c] text-[#2d1b0d] cursor-pointer rounded hover:bg-[#a3784d] transition"
           >
             Editar
           </button>
           <button 
             (click)="deleteCategoria(categoria.id)" 
-            class="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700 transition"
+            class="px-3 py-1 bg-red-600 text-white cursor-pointer rounded hover:bg-red-700 transition"
           >
             Eliminar
           </button>

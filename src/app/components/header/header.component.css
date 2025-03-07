@@ -1,0 +1,7 @@
+.header {
+    background-image: url('../../../../public/img/abedul_rojo.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    max-height: 104px;
+  }

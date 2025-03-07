@@ -1,5 +1,13 @@
 .fondodiv {
-    background-image: url('img/fondo.jpg') !important;
+  background-image: url('../../../../public/img/fondo.jpg') !important;
+  background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+  }
+
+  .fondodiv2 {
+    background-image: url('../../../../public/img/abedul.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
