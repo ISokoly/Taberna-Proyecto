@@ -2,10 +2,6 @@ import { Component } from '@angular/core';
 
 import {RouterLink  } from '@angular/router';
 
-import { ProductosComponent } from '../layout/productos/productos.component';
-import { ReportesComponent } from '../layout/reportes/reportes.component';
-import { VentasComponent } from '../layout/ventas/ventas.component';
-
 @Component({
   selector: 'app-sidebar',
   imports: [RouterLink],
@@ -24,4 +20,6 @@ export class SidebarComponent    {
     this.isSidebarOpen = false;
   };
  
+  array:any[]=[{label:"Productos", rutas:'productos'}, {label:"Categorias", rutas:'categorias'}, {label:"Marcas", rutas:'marcas'}, {label:"Ventas", rutas:'ventas'}, {label:"Reportes", rutas:'reportes'}]
+
 }
